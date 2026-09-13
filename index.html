@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Shooter - Battle for the Galaxy</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Main Game Container -->
+    <div id="gameContainer" class="game-container">
+        <!-- Game Canvas -->
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+
+        <!-- HUD (Heads Up Display) -->
+        <div id="hud" class="hud">
+            <div class="hud-item">
+                <span class="label">Score:</span>
+                <span id="score" class="value">0</span>
+            </div>
+            <div class="hud-item">
+                <span class="label">Lives:</span>
+                <span id="lives" class="value">3</span>
+            </div>
+            <div class="hud-item">
+                <span class="label">Wave:</span>
+                <span id="wave" class="value">1</span>
+            </div>
+            <div class="hud-item">
+                <span class="label">Ammo:</span>
+                <span id="ammo" class="value">∞</span>
+            </div>
+        </div>
+
+        <!-- Start Screen -->
+        <div id="startScreen" class="overlay active">
+            <div class="modal">
+                <h1>🚀 SPACE SHOOTER</h1>
+                <p class="subtitle">Battle for the Galaxy</p>
+                <div class="instructions">
+                    <h2>How to Play:</h2>
+                    <ul>
+                        <li><strong>Arrow Keys</strong> - Move your ship</li>
+                        <li><strong>Space Bar</strong> - Shoot</li>
+                        <li><strong>Destroy all enemies</strong> to advance waves</li>
+                        <li><strong>Collect power-ups</strong> for special abilities</li>
+                        <li><strong>Defeat the Boss</strong> to win!</li>
+                    </ul>
+                </div>
+                <button id="startBtn" class="btn btn-primary">START GAME</button>
+            </div>
+        </div>
+
+        <!-- Pause Screen -->
+        <div id="pauseScreen" class="overlay">
+            <div class="modal">
+                <h2>PAUSED</h2>
+                <p>Press SPACE or click Resume to continue</p>
+                <button id="resumeBtn" class="btn btn-primary">RESUME</button>
+            </div>
+        </div>
+
+        <!-- Game Over Screen -->
+        <div id="gameOverScreen" class="overlay">
+            <div class="modal">
+                <h2 id="gameOverTitle">GAME OVER</h2>
+                <p id="gameOverMessage">You lost all your lives!</p>
+                <div class="final-stats">
+                    <p>Final Score: <span id="finalScore">0</span></p>
+                    <p>Wave Reached: <span id="finalWave">1</span></p>
+                </div>
+                <button id="restartBtn" class="btn btn-primary">PLAY AGAIN</button>
+            </div>
+        </div>
+
+        <!-- Victory Screen -->
+        <div id="victoryScreen" class="overlay">
+            <div class="modal victory">
+                <h2>🎉 VICTORY! 🎉</h2>
+                <p>You defeated the Boss and saved the Galaxy!</p>
+                <div class="final-stats">
+                    <p>Final Score: <span id="victoryScore">0</span></p>
+                    <p>Waves Survived: <span id="victoryWave">0</span></p>
+                </div>
+                <button id="playAgainBtn" class="btn btn-primary">PLAY AGAIN</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="game.js"></script>
+</body>
+</html>
